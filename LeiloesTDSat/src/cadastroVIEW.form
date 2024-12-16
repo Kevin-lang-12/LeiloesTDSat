@@ -53,8 +53,8 @@
                           </Group>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="cadastroNome" max="32767" attributes="0"/>
                               <Component id="cadastroValor" pref="253" max="32767" attributes="0"/>
+                              <Component id="cadastroNome" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -127,11 +127,6 @@
         <Property name="text" type="java.lang.String" value="Valor:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="cadastroNome">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastroNomeActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JTextField" name="cadastroValor">
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
@@ -156,6 +151,8 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProdutosActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="cadastroNome">
     </Component>
   </SubComponents>
 </Form>
