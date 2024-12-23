@@ -60,10 +60,29 @@ System.out.println("Conectou com o banco de dados!!!!");
     }
 
     
-    public ArrayList<ProdutosDTO> listarProdutos(){
-        
-        return listagem;
-    }
+    public ArrayList<ProdutosDTO> listarProdutos() {
+                String sql = "SELECT * FROM produtos"; 
+                try {
+                    PreparedStatement stmt = this.conn.prepareStatement(sql);
+                    ResultSet rs = stmt.executeQuery();            
+
+                    while (rs.next()) {
+                    ProdutosDTO produto = new ProdutosDTO();           
+                    produto.setId(rs.getInt("id"));
+                    produto.setNome(rs.getString("nome"));
+                    produto.setValor(rs.getInt("valor"));
+                    produto.setStatus(rs.getString("status"));
+                    
+                    listagem.add(produto);
+                            
+                    }
+                  return listagem;
+                    
+                } catch (Exception e) {
+                    return null;
+                }
+                
+            }
     
     
     
