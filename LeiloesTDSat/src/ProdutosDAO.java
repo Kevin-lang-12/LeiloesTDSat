@@ -84,7 +84,20 @@ System.out.println("Conectou com o banco de dados!!!!");
                 
             }
     
+     public boolean venderProduto(ProdutosDTO produto) {
+    String sql = "UPDATE produtos SET status = ? WHERE id = ?";
     
+    try{
+        prep = conn.prepareStatement(sql);
+        prep.setString(1, produto.getStatus());
+        prep.setInt(2, produto.getId());
+        prep.executeUpdate();
+        return true;
+    }catch (SQLException ex){
+        System.err.println("Erro " + ex); 
+        return true;
+    }
+    }   
     
         
 }
